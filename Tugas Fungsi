@@ -178,7 +178,6 @@ int bangun_datar (){
     }else{
         printf("Angka yang inputkan salah");
     }
-    ulang();
     return 0;
 }
 
