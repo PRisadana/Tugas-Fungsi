@@ -56,7 +56,14 @@ float persegi(){
     printf ("\n\t========================================================");
     printf ("\n\t========================================================");
     printf ("\n\tMasukkan sisi = ");
-    scanf  ("%f", &sisi);
+    while (scanf  ("%f", &sisi)==0 ){
+        printf ("\t---------------------------------------");
+        printf ("\n\tKarakter yang anda inputkan salah");
+        printf ("\n\tSilahkan inputkan ulang");
+        printf ("\n\t---------------------------------------");
+        printf ("\n\tMasukkan sisi  = ");
+        while (sisi=getchar() != '\n');
+    }
     luas = fungsi_luas_persegi(sisi);
     keliling = fungsi_kll_persegi (sisi);
     printf ("\n\t========================================================");
@@ -83,11 +90,32 @@ float segitiga(){
     printf ("\n\t========================================================");
     printf ("\n\t========================================================");
     printf ("\n\tMasukkan sisi 1 = ");
-    scanf  ("%f", &sisi1);
+    while (scanf  ("%f", &sisi1)==0 ){
+        printf ("\t---------------------------------------");
+        printf ("\n\tKarakter yang anda inputkan salah");
+        printf ("\n\tSilahkan inputkan ulang");
+        printf ("\n\t---------------------------------------");
+        printf ("\n\tMasukkan sisi 1 = ");
+        while (sisi1=getchar() != '\n');
+    }
     printf ("\n\tMasukkan sisi 2 = ");
-    scanf  ("%f", &sisi2);
+    while (scanf  ("%f", &sisi2)==0 ){
+        printf ("\t---------------------------------------");
+        printf ("\n\tKarakter yang anda inputkan salah");
+        printf ("\n\tSilahkan inputkan ulang");
+        printf ("\n\t---------------------------------------");
+        printf ("\n\tMasukkan sisi 2 = ");
+        while (sisi2=getchar() != '\n');
+    }
     printf ("\n\tMasukkan sisi 3 = ");
-    scanf  ("%f", &sisi3);
+    while (scanf  ("%f", &sisi3)==0 ){
+        printf ("\t---------------------------------------");
+        printf ("\n\tKarakter yang anda inputkan salah");
+        printf ("\n\tSilahkan inputkan ulang");
+        printf ("\n\t---------------------------------------");
+        printf ("\n\tMasukkan sisi 3 = ");
+        while (sisi3=getchar() != '\n');
+    }
     luas = fungsi_luas_segitiga(sisi1, sisi2, sisi3);
     keliling = fungsi_keliling_segitiga (sisi1, sisi2, sisi3);
     printf ("\n\t========================================================");
@@ -113,7 +141,14 @@ float lingkaran(){
     printf ("\n\t========================================================");
     printf ("\n\t========================================================");
     printf ("\n\tMasukkan radius = ");
-    scanf  ("%f", &radius);
+    while (scanf  ("%f", &radius)==0 ){
+        printf ("\t---------------------------------------");
+        printf ("\n\tKarakter yang anda inputkan salah");
+        printf ("\n\tSilahkan inputkan ulang");
+        printf ("\n\t---------------------------------------");
+        printf ("\n\tMasukkan radius = ");
+        while (radius=getchar() != '\n');
+    }
     luas = fungsi_luas_lingkaran(radius);
     keliling = fungsi_keliling_lingkaran (radius);
     printf ("\n\t========================================================");
@@ -142,11 +177,34 @@ float aritmatika(){
     printf ("\n\t========================================================");
     printf ("\n\t========================================================");
     printf ("\n\tMasukkan suku pertama                = ");
-    scanf  ("%f", &a);
+    while (scanf  ("%f", &a)==0 ){
+        printf ("\t---------------------------------------");
+        printf ("\n\tKarakter yang anda inputkan salah");
+        printf ("\n\tSilahkan inputkan ulang");
+        printf ("\n\t---------------------------------------");
+        printf ("\n\tMasukkan suku pertama                = ");
+        while (a=getchar() != '\n');
+    }
+
     printf ("\n\tMasukkan beda dari setiap suku       = ");
-    scanf  ("%f", &b);
+    while (scanf  ("%f", &b)==0 ){
+        printf ("\t---------------------------------------");
+        printf ("\n\tKarakter yang anda inputkan salah");
+        printf ("\n\tSilahkan inputkan ulang");
+        printf ("\n\t---------------------------------------");
+        printf ("\n\tMasukkan beda dari setiap suku       = ");
+        while (b=getchar() != '\n');
+    }
+
     printf ("\n\tMasukkan suku yang akan dioperasikan = ");
-    scanf  ("%f", &n);
+    while (scanf  ("%f", &n)==0 ){
+        printf ("\t---------------------------------------");
+        printf ("\n\tKarakter yang anda inputkan salah");
+        printf ("\n\tSilahkan inputkan ulang");
+        printf ("\n\t---------------------------------------");
+        printf ("\n\tMasukkan suku yang akan dioperasikan = ");
+        while (n=getchar() != '\n');
+    }
     baris = fungsi_baris_aritmatika(a, b, n);
     deret = fungsi_deret_aritmatika (a, b, n);
     printf ("\n\t========================================================");
@@ -166,7 +224,15 @@ int bangun_datar (){
     printf ("\n\t(3) Lingkaran                                           ");
     printf ("\n\t========================================================");
     printf ("\n\tMasukkan angka untuk memilih bangun datar :  ");
-    scanf  ("%d", &pilih);
+    while (scanf  ("%d", &pilih)==0 || pilih<1 || pilih>3){
+        printf ("\t---------------------------------------");
+        printf ("\n\tKarakter yang anda inputkan salah");
+        printf ("\n\tSilahkan inputkan ulang");
+        printf ("\n\t---------------------------------------");
+        printf ("\n\tMasukkan angka untuk memilih bangun datar :  ");
+        while (pilih=getchar() != '\n');
+    }
+
     close();
 
     if (pilih==1){
@@ -176,7 +242,14 @@ int bangun_datar (){
     }else if (pilih==3){
         lingkaran();
     }else{
-        printf("Angka yang inputkan salah");
+        printf("\n\tAngka yang diinputkan salah");
+
+        /*isdigit(pilih);
+        printf ("\n\t****************************************************");
+        printf("\n\tInputan harus sesuai pilihan 1, 2 atau 3\n\tSilahkan mengulang");
+        printf ("\n\t****************************************************");
+        bangun_datar(); */
+
     }
     return 0;
 }
@@ -192,7 +265,22 @@ int main(){
     printf ("\n\t(2) Baris dan Deret Aritmatika                          ");
     printf ("\n\t========================================================");
     printf ("\n\tMasukkan angka untuk memilih program :  ");
-    scanf  ("%d", &menu);
+    while (scanf  ("%d", &menu)==0 || menu<1 || menu>2){
+        printf ("\t---------------------------------------");
+        printf ("\n\tKarakter yang anda inputkan salah");
+        printf ("\n\tSilahkan inputkan ulang");
+        printf ("\n\t---------------------------------------");
+        printf ("\n\tMasukkan angka untuk memilih program :  ");
+        while (menu=getchar() != '\n');
+    }
+
+    /*while(scanf("%d", &menu)==0 || menu < 1 || menu > 2){
+        printf ("\n\tKarakter yang anda inputkan salah");
+        printf ("\n\tMasukkan angka untuk memilih program :  ");
+    }
+    int c;
+    while ((c=getchar()) != '\n');*/
+    
     close();
 
     if (menu==1){
@@ -200,7 +288,22 @@ int main(){
     }else if (menu==2){
         aritmatika();
     }else{
-        printf("\n\tAngka yang anda inputkan salah");
+        printf("\n\tAngka yang diinputkan salah");
+
+        /*while ((menu=getchar()) != 13)
+        {
+            if ((menu >= '0' && menu <= '9'))
+            {
+                printf ("%d", menu);
+            }
+            
+        }*/
+        
+        /*isdigit(menu);
+        printf ("\n\t****************************************************");
+        printf("\n\tInputan harus sesuai pilihan 1 atau 2\n\tSilahkan mengulang");
+        printf ("\n\t****************************************************");
+        main(); */
     }
     ulang();
     return 0;
@@ -215,7 +318,15 @@ int ulang(){
     printf ("\n\t(2) Tidak, sudah selesai                                ");
     printf ("\n\t========================================================");
     printf ("\n\tMasukkan angka untuk memilih  :  ");
-    scanf  ("%d", &menu);
+    while (scanf  ("%d", &menu)==0 || menu<1 || menu>2){
+        printf ("\t---------------------------------------");
+        printf ("\n\tKarakter yang anda inputkan salah");
+        printf ("\n\tSilahkan inputkan ulang");
+        printf ("\n\t---------------------------------------");
+        printf ("\n\tMasukkan angka bulan lahir kamu   : ");
+        while (menu=getchar() != '\n');
+    }
+
 
     if (menu==1){
         close();
@@ -224,7 +335,14 @@ int ulang(){
         close();
         penutup();
     }else{
-        printf("Angka yang anda inputkan salah");
+        printf("\n\tAngka yang diinputkan salah");
+
+       /* isdigit(menu);
+        printf ("\n\t****************************************************");
+        printf("\n\tInputan harus sesuai pilihan 1 atau 2\n\tSilahkan mengulang");
+        printf ("\n\t****************************************************");
+        ulang(); */
     }
+    
     return 0;
 }
